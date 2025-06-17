@@ -8,53 +8,69 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.sql.Timestamp;
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Getter
-@Setter
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "students")
 public class Student {
     @Id
-    @GeneratedValue
-    @Column(updatable = false, nullable = false)
-    Long id;
-    @Column
-    String title;
-    @Column
-    String description;
-    @CreationTimestamp
-    @Column (updatable = false)
-    Timestamp dateCreated;
-    @UpdateTimestamp
-    Timestamp lastModified;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(nullable = false)
+    private String name;
 
+    @Column(nullable = false)
+    private int score;
+
+    @Column(nullable = false)
+    private int grade = 10; // Default value
+
+    // Constructors
+    public Student() {}
+
+    public Student(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    public Student(String name, int score, int grade) {
+        this.name = name;
+        this.score = score;
+        this.grade = grade;
+    }
+
+    // Getters and Setters
     public Long getId() {
         return id;
     }
 
-    public String getDescription() {
-        return description;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public int getScore() {
+        return score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 
+    public int getGrade() {
+        return grade;
+    }
 
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
 }
-
-
