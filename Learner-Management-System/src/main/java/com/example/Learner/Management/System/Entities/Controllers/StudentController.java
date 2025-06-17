@@ -4,7 +4,7 @@
 //}
 //package com.example.Learner.Management.System.controller;
 
-package Controllers;
+package com.example.Learner.Management.System.Entities.Controllers;
 import com.example.Learner.Management.System.Entities.Student;
 import com.example.Learner.Management.System.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +57,5 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
+
 }
