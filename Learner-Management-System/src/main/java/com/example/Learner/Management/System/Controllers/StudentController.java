@@ -4,7 +4,7 @@
 //}
 //package com.example.Learner.Management.System.controller;
 
-package com.example.Learner.Management.System.Entities.Controllers;
+package com.example.Learner.Management.System.Controllers;
 import com.example.Learner.Management.System.Entities.Student;
 import com.example.Learner.Management.System.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
