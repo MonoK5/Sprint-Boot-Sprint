@@ -58,4 +58,12 @@ public class StudentController {
         studentService.deleteStudent(id);
     }
 
+    @GetMapping ("/average")
+    public double calculateAverage () {
+        return studentService.calculateAvg();
+    }
+    @PutMapping
+    public void updateStudent (@RequestBody Student student) {
+        studentService.updateStudent(student);
+    }
 }
