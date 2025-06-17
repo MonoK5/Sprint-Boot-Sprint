@@ -1,4 +1,4 @@
-package com.example.Learner.Management.System.Repository;
+package com.example.Learner.Management.System.repository;
 
 import com.example.Learner.Management.System.Entities.Student;
 import org.springframework.data.repository.CrudRepository;
