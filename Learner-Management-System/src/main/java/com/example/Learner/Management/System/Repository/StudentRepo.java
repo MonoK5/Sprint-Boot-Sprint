@@ -9,5 +9,7 @@ import java.util.List;
 @Repository
 public interface StudentRepo extends CrudRepository <Student, Long>{
 
+    List<Student> findByScoreGreaterThan(int score);
 
+    List<Student> findByName(String name);
 }

@@ -17,7 +17,7 @@ public interface StudentService {
 
     List<Student> getStudentsByName(String name);
 
-     double calculateAvg();
+     double calculat-eAvg();
 
      void updateStudent(Student student);
 }
