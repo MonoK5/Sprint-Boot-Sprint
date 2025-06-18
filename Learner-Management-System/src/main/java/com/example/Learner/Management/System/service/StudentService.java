@@ -13,7 +13,7 @@ public interface StudentService {
 
     List<Student> getStudentsWithScoreGreaterThan(int score);
 
-  void deleteStudent(Long id);
+  boolean deleteStudent(Long id);
 
     List<Student> getStudentsByName(String name);
 

@@ -30,17 +30,22 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
+
         return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
-        Student student = studentService.getStudentById(id);
-        if (student != null) {
-            return ResponseEntity.ok(student);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Student getStudentById(@PathVariable Long id) {
+//        Student student = studentService.getStudentById(id);
+//        if (student != null) {
+//            return ResponseEntity.ok(student);
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+
+        return studentService.getStudentById(id);
+
+
     }
 
     @GetMapping("/name/{name}")

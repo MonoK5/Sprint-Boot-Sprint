@@ -39,7 +39,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public void deleteStudent(Long id) {
+    public boolean deleteStudent(Long id) {
         repo.findById(id)
                 .map(student -> {
                     boolean rowsAffected = false;
@@ -53,6 +53,7 @@ public class StudentServiceImpl implements StudentService{
 
                     return true;
                 });
+        return false;
     }
     @Override
     public List<Student> getStudentsByName(String name) {
