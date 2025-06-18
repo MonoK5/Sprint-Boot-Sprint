@@ -13,11 +13,11 @@ public interface StudentService {
 
     List<Student> getStudentsWithScoreGreaterThan(int score);
 
-    void deleteStudent(Long id);
+  void deleteStudent(Long id);
 
     List<Student> getStudentsByName(String name);
 
-     double calculat-eAvg();
+     double calculateAvg();
 
      void updateStudent(Student student);
 }

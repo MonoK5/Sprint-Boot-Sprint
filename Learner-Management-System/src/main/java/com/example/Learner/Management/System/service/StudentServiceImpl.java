@@ -40,9 +40,20 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public void deleteStudent(Long id) {
-        repo.deleteById(id);
-    }
+        repo.findById(id)
+                .map(student -> {
+                    boolean rowsAffected = false;
+                    if (!rowsAffected) {
+                        System.out.println("---------------------------------------------------");
+                        System.out.printf("|\t%-20s  %-7s|\n", "Successfully deleted student with ID:", id);
+                        System.out.println("---------------------------------------------------");
+                        repo.delete(student);
 
+                    }
+
+                    return true;
+                });
+    }
     @Override
     public List<Student> getStudentsByName(String name) {
         return repo.findByName(name);
