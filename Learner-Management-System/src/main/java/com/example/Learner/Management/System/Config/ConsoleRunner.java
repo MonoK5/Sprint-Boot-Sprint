@@ -17,7 +17,6 @@ public class ConsoleRunner  implements CommandLineRunner {
         this.studentService = service;
         this.scanner = new Scanner(System.in);
     }
-
     @Override
     public void run(String... args){
         int select = -1;
@@ -61,7 +60,6 @@ public class ConsoleRunner  implements CommandLineRunner {
         if (name.isEmpty()) return name;
         return Character.toUpperCase(name.charAt(0)) + name.substring(1);
     }
-
     private void displayAllStudent() {
         System.out.println("\n--- All Students ---");
 
@@ -146,7 +144,6 @@ public class ConsoleRunner  implements CommandLineRunner {
                     System.out.println("Invalid input. Please enter a valid number.");
                 }
             }
-
             // Add student to DB
             // Student student = new Student(, name, score, 10);
             studentService.saveStudent(new Student(name, score));
@@ -173,18 +170,11 @@ public class ConsoleRunner  implements CommandLineRunner {
                 break;
             }
         }
-
-
     }
 
     private void updateStudent() {
         System.out.println("\n--- Update Student ---");
-       /* List<Student> students = studentService.displayAllStudent();
 
-        if (students.isEmpty()) {
-            System.out.println("No students to update.");
-            return;
-        }*/
 
         String newName ;
         int newScore ;
@@ -424,25 +414,6 @@ public class ConsoleRunner  implements CommandLineRunner {
         System.out.println("----------------------------------");
     }
 
-  /* private void searchStudent() {
-        System.out.println("\n--- Search Students ---");
-        System.out.print("Enter search term: ");
-        String searchTerm = scanner.nextLine();
-
-        List<Student> students = studentService.getStudentsByName(searchTerm);
-        if (students.isEmpty()) {
-            System.out.println("No matching students found.");
-        } else {
-            System.out.println("--------------------------------------------------");
-            System.out.printf("|%-5s |%-20s |%-10s |%-7s|\n", "ID", "Name", "Score", "Grade");
-            System.out.println("--------------------------------------------------");
-            for (Student student : students) {
-                System.out.printf("|%-5d |%-20s |%-10d |%-7s|\n",
-                        student.getId(),capitalizeName( student.getName()), student.getScore(), student.getGrade());
-            }
-            System.out.println("--------------------------------------------------");
-        }
-    }*/
 
     private void searchStudent(){
         boolean searchAgain = true;
