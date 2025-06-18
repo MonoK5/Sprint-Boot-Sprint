@@ -343,7 +343,6 @@ public class ConsoleRunner  implements CommandLineRunner {
                     System.out.println("Invalid input. Please enter a valid number.");
                 }
             }
-
             int confirmDelete;
             while (true) {
                 System.out.println("Are you sure you want to delete student ID " + id + "?");
@@ -372,7 +371,6 @@ public class ConsoleRunner  implements CommandLineRunner {
                 System.out.println("-------------------------------------------------");
 
             }
-
 
             int again;
             while (true) {

@@ -67,8 +67,18 @@ public class StudentController {
     public double calculateAverage () {
         return studentService.calculateAvg();
     }
-    @PutMapping
-    public void updateStudent (@RequestBody Student student) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
+        Student existingStudent = studentService.getStudentById(id);
+        if (existingStudent == null) {
+            return ResponseEntity.notFound().build();  // 404 if student doesn't exist
+        }
+
+        // Set ID explicitly to avoid mismatch or missing ID in request body
+        student.setId(id);
+
         studentService.updateStudent(student);
+        return ResponseEntity.ok(student);
     }
+
 }
